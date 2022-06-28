@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Button, TextField } from "@mui/material";
-import { DesktopDatePicker, LocalizationProvider } from '@mui/x-date-pickers';
+import { DesktopDatePicker , LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 
 class AddTodo extends Component {
@@ -10,7 +10,7 @@ class AddTodo extends Component {
     this.state = {
       content: "",
       date: "",
-      due: null,
+      due : null,
     };
   }
   // The handleChange function updates the react state with the new input value provided from the user and the current date/time.
@@ -39,7 +39,7 @@ class AddTodo extends Component {
       this.props.addTodo(this.state);
       this.setState({
         content: "",
-        date: "", 
+        date: "",
         due: null
       });
     }
@@ -60,6 +60,7 @@ class AddTodo extends Component {
           variant="outlined"
           onChange={this.handleChange}
           value={this.state.content}
+          data-testid = "new-item-input"
         />
         <LocalizationProvider dateAdapter={AdapterDateFns}>
           <DesktopDatePicker
